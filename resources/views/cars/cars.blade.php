@@ -1,8 +1,9 @@
 @extends('layouts.app')
 @section('title', 'Home')
 @section('content')
-  <div class="container m-5">
+  <div class="container p-5">
     <h1>Cars</h1>
+    <a href="{{ route('create')}}">Inserisci auto</a>
     <table class="table">
       <thead>
         <tr>
