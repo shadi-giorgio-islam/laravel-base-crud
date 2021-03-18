@@ -20,6 +20,18 @@ class CarController extends Controller
         ];
         return view('cars.index', $data);
     }
+    public function car()
+    {
+        $macchine = Car::all();
+        $data = [
+          'macchine' => $macchine
+        ];
+        return view('cars.cars', $data);
+    }
+    public function about()
+    {
+        return view('cars.about');
+    }
 
     /**
      * Show the form for creating a new resource.
