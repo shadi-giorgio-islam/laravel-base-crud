@@ -2,27 +2,29 @@
 @section('title', 'Home')
 @section('content')
   <div class="container p-5">
-        <form>
+    <form method="post" action="{{route('store')}}">
+      @method('POST')
+      @csrf
       <div class="form-group">
         <label for="inputModello">Modello</label>
-        <input type="email" class="form-control" id="inputModello" aria-describedby="emailHelp">
+        <input type="text" class="form-control" name="modello" id="inputModello" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">Mi raccomando inserisci il modello corretto</small>
       </div>
       <div class="form-group">
         <label for="inputMarca">Marca</label>
-        <input type="password" class="form-control" id="inputMarca">
+        <input type="text" class="form-control" name="marca" id="inputMarca">
       </div>
       <div class="form-group">
         <label for="inputColore">Colore</label>
-        <input type="password" class="form-control" id="inputColore">
+        <input type="text" class="form-control" name="colore" id="inputColore">
       </div>
       <div class="form-group">
         <label for="inputPrezzo">Prezzo</label>
-        <input type="password" class="form-control" id="inputPrezzo">
+        <input type="text" class="form-control" name="prezzo" id="inputPrezzo">
       </div>
       <div class="form-group">
-        <label for="inputPrezzo">Motore</label>
-        <input type="password" class="form-control" id="inputPrezzo">
+        <label for="inputMotore">Motore</label>
+        <input type="text" class="form-control" name="motore" id="inputMotore">
       </div>
       <div class="form-group form-check">
         <input type="checkbox" class="form-check-input" id="exampleCheck1">
