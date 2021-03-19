@@ -24,7 +24,10 @@
             <td>{{$macchina->colore}}</td>
             <td>{{$macchina->prezzo}} $</td>
             <td>{{$macchina->motore}}</td>
-            <td><a href="{{ route('show', ['show', $macchina->id]) }}">dettagli</a></td>
+            <td>
+              <a href="{{ route('show', $macchina->id) }}" class="btn btn-info">dettagli</a>
+              <a href="{{ route('edit', $macchina->id) }}" class="btn btn-warning">Modifica</a>
+            </td>
           </tr>
         @endforeach
       </tbody>

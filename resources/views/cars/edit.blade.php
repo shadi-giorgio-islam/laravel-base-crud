@@ -14,26 +14,27 @@
     <form method="post" action="{{route('store')}}">
       @method('POST')
       @csrf
+      @dd($vestito)
       <div class="form-group">
         <label for="inputModello">Modello</label>
-        <input type="text" class="form-control" name="modello" id="inputModello" aria-describedby="emailHelp">
+        <input type="text" class="form-control" name="modello" id="inputModello" value="{{$macchina->modello}}" aria-describedby="emailHelp">
         <small id="emailHelp" class="form-text text-muted">Mi raccomando inserisci il modello corretto</small>
       </div>
       <div class="form-group">
         <label for="inputMarca">Marca</label>
-        <input type="text" class="form-control" name="marca" id="inputMarca">
+        <input type="text" class="form-control" name="marca" id="inputMarca" value="{{$macchina->marca}}">
       </div>
       <div class="form-group">
         <label for="inputColore">Colore</label>
-        <input type="text" class="form-control" name="colore" id="inputColore">
+        <input type="text" class="form-control" name="colore" id="inputColore" value="{{$macchina->colore}}">
       </div>
       <div class="form-group">
         <label for="inputPrezzo">Prezzo</label>
-        <input type="text" class="form-control" name="prezzo" id="inputPrezzo">
+        <input type="text" class="form-control" name="prezzo" id="inputPrezzo" value="{{$macchina->prezzo}}">
       </div>
       <div class="form-group">
         <label for="inputMotore">Motore</label>
-        <select class="form-control" name="motore" id="inputMotore">
+        <select class="form-control" name="motore" id="inputMotore" value="{{$macchina->motore}}">
           <option value="diesel" selected>diesel</option>
           <option value="ibrida">ibrida</option>
           <option value="benzina">benzina</option>
