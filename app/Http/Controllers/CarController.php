@@ -52,14 +52,22 @@ class CarController extends Controller
     public function store(Request $request)
     {
         $data = $request->all();
+        $request->validate([
+          'modello' => 'required|unique:cars|max:255',
+          'marca' => 'required|max:100',
+          'colore' => 'required|max:50',
+          'prezzo' => 'required|max:6',
+          'motore' => 'required|max:50',
+        ]);
         $newCar = new Car();
-        $newCar->modello = $data['modello'];
-        $newCar->marca = $data['marca'];
-        $newCar->colore = $data['colore'];
-        $newCar->prezzo = $data['prezzo'];
-        $newCar->motore = $data['motore'];
+        // $newCar->modello = $data['modello'];
+        // $newCar->marca = $data['marca'];
+        // $newCar->colore = $data['colore'];
+        // $newCar->prezzo = $data['prezzo'];
+        // $newCar->motore = $data['motore
+        $newCar->fill($data);
         $newCar->save();
-        return redirect()->route('cars');
+        return redirect()->route('show', $newCar->find($newCar->id));
     }
 
     /**
@@ -70,7 +78,14 @@ class CarController extends Controller
      */
     public function show($id)
     {
-        //
+      $macchina_sel= Car::find($id);
+      if ($macchina_sel) {
+        $data = [
+          'macchina' => $macchina_sel
+        ];
+        return view('cars.show', $data);
+      }
+      abort('404');
     }
 
     /**

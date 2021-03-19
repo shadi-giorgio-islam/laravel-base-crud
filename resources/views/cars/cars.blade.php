@@ -24,7 +24,7 @@
             <td>{{$macchina->colore}}</td>
             <td>{{$macchina->prezzo}} $</td>
             <td>{{$macchina->motore}}</td>
-            <td><a href="{{ route('show', ['cars', $macchina->id]) }}">dettagli</a></td>
+            <td><a href="{{ route('show', ['show', $macchina->id]) }}">dettagli</a></td>
           </tr>
         @endforeach
       </tbody>

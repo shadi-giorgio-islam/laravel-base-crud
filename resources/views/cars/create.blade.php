@@ -1,6 +1,15 @@
 @extends('layouts.app')
 @section('title', 'Home')
 @section('content')
+  @if ($errors->any())
+    <div class="alert alert-danger">
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+  @endif
   <div class="container p-5">
     <form method="post" action="{{route('store')}}">
       @method('POST')
