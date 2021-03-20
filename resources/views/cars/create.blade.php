@@ -11,7 +11,7 @@
     </div>
   @endif
   <div class="container p-5">
-    <form method="post" action="{{route('store')}}">
+    <form method="post" action="{{route('cars.store')}}">
       @method('POST')
       @csrf
       <div class="form-group">

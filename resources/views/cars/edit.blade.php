@@ -11,10 +11,9 @@
     </div>
   @endif
   <div class="container p-5">
-    <form method="post" action="{{route('store')}}">
-      @method('POST')
+    <form method="post" action="{{route('cars.update', ['car'=>$macchina->id])}}">
+      @method('PUT')
       @csrf
-      @dd($vestito)
       <div class="form-group">
         <label for="inputModello">Modello</label>
         <input type="text" class="form-control" name="modello" id="inputModello" value="{{$macchina->modello}}" aria-describedby="emailHelp">

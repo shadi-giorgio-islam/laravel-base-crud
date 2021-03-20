@@ -26,7 +26,7 @@
             <td>{{$macchina->motore}}</td>
             <td>
               <a href="{{route('cars.show', ['car'=>$macchina->id])}}" class="btn btn-info">dettagli</a>
-              <a href="{{ route('cars.edit', $macchina->id) }}" class="btn btn-warning">Modifica</a>
+              <a href="{{ route('cars.edit', ['car'=>$macchina->id]) }}" class="btn btn-warning">Modifica</a>
             </td>
           </tr>
         @endforeach
