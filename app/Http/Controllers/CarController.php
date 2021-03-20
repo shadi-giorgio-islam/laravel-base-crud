@@ -20,17 +20,13 @@ class CarController extends Controller
         ];
         return view('cars.index', $data);
     }
-    public function car()
-    {
-        $macchine = Car::all();
-        $data = [
-          'macchine' => $macchine
-        ];
-        return view('cars.cars', $data);
-    }
     public function about()
     {
-        return view('cars.about');
+        return view('about');
+    }
+    public function home()
+    {
+        return view('home');
     }
 
     /**
@@ -97,7 +93,7 @@ class CarController extends Controller
     {
         if ($car) {
           $data = [
-            'macchina' => $dress
+            'macchina' => $car
           ];
           return view('cars.edit', $data);
         }
